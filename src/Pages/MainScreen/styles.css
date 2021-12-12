@@ -1,0 +1,122 @@
+.h-100 {
+    height:  14.3rem !important;
+}
+
+
+.scrollSet {
+   
+    overflow-y: auto;
+}
+
+.titleTeam{
+    font-style: normal;
+    font-weight: 800;
+    font-size: 13px;
+    line-height: 48px;
+    color: #333652;
+}
+
+.pokemonContent{
+
+    background-color: #E9EAEC !important; 
+    border: none !important;
+}
+
+.buttonCorrect{
+     float: right;
+    background-color: #8FDA58; 
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+    border: none !important;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 4rem;
+
+}
+
+.buttonCorrect:hover{
+    float: right;
+   background-color: #8eda58a1; 
+   border-radius: 100%;
+   width: 60px;
+   height: 60px;
+   border: none !important;
+   color: white;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-right: 4rem;
+
+}
+
+.buttonTrash{
+    float: right;
+   background-color: #F8635A; 
+   border-radius: 100%;
+   width: 60px;
+   height: 60px;
+   border: none !important;
+   color: white;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-right: 1rem;
+
+}
+
+.buttonTrash:hover{
+    float: right;
+   background-color: #f8625a8c; 
+   border-radius: 100%;
+   width: 60px;
+   height: 60px;
+   border: none !important;
+   color: white;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-right: 1rem;
+
+}
+
+.buttonReloadList{
+   margin-top: -15rem;
+   margin-left: 45%;
+   display: flex;
+   margin-bottom: 2rem;
+   align-items: center;
+   justify-content: center;
+
+}
+
+.buttonReload{
+   color: white;
+    background-color: #F8635A; 
+    margin-top: 0rem;
+    display: flex;
+    margin-bottom: 2rem;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin: 0 5rem 0 5rem;
+ 
+ }
+
+
+ .buttonReload:hover{
+    color: white;
+     background-color: #f8625a86; 
+     margin-top: 0rem;
+     display: flex;
+     margin-bottom: 2rem;
+     align-items: center;
+     justify-content: center;
+     width: 90%;
+     margin: 0 5rem 0 5rem;
+  
+  }
+ 
+
