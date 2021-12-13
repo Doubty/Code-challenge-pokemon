@@ -1,20 +1,17 @@
-.content{
-    margin-top: 0rem;
-    background-color: #90ADC6 ;
-    color: white;
-    height: 8rem;
-  
+.content {
+  margin-top: 0rem;
+  background-color: #90adc6;
+  color: white;
+  height: 8rem;
 }
 
-.line{
-    margin-top: 4rem;
-    background-color: #FFFFFF;
-    width: 80%;
-    height: 0.1rem;
-
+.line {
+  margin-top: 4rem;
+  background-color: #ffffff;
+  width: 80%;
+  height: 0.1rem;
 }
 
-.title{
-
-    margin-bottom: 0.8rem;
+.title {
+  margin-bottom: 0.8rem;
 }

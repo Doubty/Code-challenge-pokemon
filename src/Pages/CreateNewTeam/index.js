@@ -1,20 +1,13 @@
-import React from 'react'; 
+import React from 'react';
 import Header from '../../components/Header';
 import './styles.css';
 
-function CreateNewTeam(){
+function CreateNewTeam() {
 
-  return ( 
-        <>
-        
- 
-
-           
-
-            <Header title="TEAMS" />
-          
-        
-        </>
+  return (
+    <>
+      <Header title="TEAMS" />
+    </>
   )
 
 }

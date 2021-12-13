@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Header from "../../components/Header"
-import {  useDrop } from "react-dnd";
+import { useDrop } from "react-dnd";
 import PokemonSelect from '../../components/PokemonSelect';
 import PokemonSelected from '../../components/PokemonSelected';
-import {getPokemonList} from '../../service/api';
+import { getPokemonList } from '../../service/api';
 import Swal from 'sweetalert2'
 import axios from 'axios';
 import './styles.css';
@@ -14,7 +14,7 @@ const TeamSelection = () => {
   const [team, setTeam] = useState([]);
   const [loading, setLoading] = useState(false);
   const [next, setNext] = useState(null);
-  
+
 
   async function loadPokeminList() {
     const res = await getPokemonList()
@@ -23,40 +23,40 @@ const TeamSelection = () => {
   }
 
   async function reloadListPokemon() {
-    if(next !== null){
+    if (next !== null) {
       setLoading(true);
 
       try {
         const res = await axios.get(next);
         setNext(res.data.next);
         setPokemons(() => [...pokemon, ...res.data.results]);
-       setLoading(false);
+        setLoading(false);
       } catch (error) {
 
         console.log(error)
-        
+
       }
 
-  
+
     }
 
   }
 
 
-   function handleScroll(e){
+  function handleScroll(e) {
     const bottom = e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight;
-    if (bottom) { 
+    if (bottom) {
 
       setPokemons(items => [...items]);
       setTeam(items => [...items])
       reloadListPokemon();
 
-     
-     }
+
+    }
   }
 
 
-  function removeAllPokemons(e){
+  function removeAllPokemons(e) {
 
     Swal.fire({
       icon: 'error',
@@ -68,14 +68,14 @@ const TeamSelection = () => {
     setPokemons(items => [...items, ...team]);
     setTeam([])
 
-    
-   
+
+
   }
 
-  useEffect( () => {
+  useEffect(() => {
     loadPokeminList()
   }, []);
-  
+
   const [{ isOver }, addToTeamRef] = useDrop({
     accept: "pokemon",
     collect: (monitor) => ({
@@ -94,18 +94,18 @@ const TeamSelection = () => {
     console.log(item);
     if (item && item.type === "pokemon") {
       //Accepting pokemons into the team
-      if(team.length >= 6){
+      if (team.length >= 6) {
         Swal.fire({
           icon: 'error',
           title: 'Team Pokemon is full',
           text: 'Your list of pokemon is already completed!',
           confirmButtonText: 'Confirm',
         })
-      }else{
+      } else {
         setTeam((_team) => [..._team, pokemon[item.index]]);
         setPokemons((_players) => _players.filter((_, idx) => idx !== item.index));
       }
-      
+
     } else {
       //Removing a pokemon from team
       setPokemons((_players) => [..._players, team[item.index]]);
@@ -123,13 +123,13 @@ const TeamSelection = () => {
 
       <div className="row ">
         <div className="col ">
-        
+
           <div className="row justify-content-md-center">
             <div className={` pokemonContent col-11 border m-2 ${dragHoverTeamBG}`}>
               <div className=" row text-white">
                 <div className="col titleTeam">My Team <i className="fa fa-edit"></i></div>
               </div>
-          
+
 
               <div className="row py-2 h-100 scrollSet" ref={addToTeamRef}>
                 {team.map((pokemon, idx) => (
@@ -147,24 +147,24 @@ const TeamSelection = () => {
         </div>
       </div>
 
-      
+
       <div className=" row text-white">
-              <div className="col-md-12">
-              
-             
-              <buttonn  style={{backgroundColor: team.length < 6 ?'#8eda58a1':'#8FDA58'}} onClick={() =>   Swal.fire({
-          icon: 'success',
-          title: 'Team Pokemon',
-          text: 'New pokemon team was created with success!',
-          confirmButtonText: 'Confirm',
-        })} className=" buttonCorrect"> <i className="fa fa-check fa-2x"></i></buttonn>
-              <buttonn style={{backgroundColor: team.length > 0 ?'#F8635A':'#f8625a8c'}} onClick={removeAllPokemons} className="buttonTrash "> <i className="fa fa-trash fa-2x"></i></buttonn>
-              </div>
-              </div>
+        <div className="col-md-12">
+
+
+          <buttonn style={{ backgroundColor: team.length < 6 ? '#8eda58a1' : '#8FDA58' }} onClick={() => Swal.fire({
+            icon: 'success',
+            title: 'Team Pokemon',
+            text: 'New pokemon team was created with success!',
+            confirmButtonText: 'Confirm',
+          })} className=" buttonCorrect"> <i className="fa fa-check fa-2x"></i></buttonn>
+          <buttonn style={{ backgroundColor: team.length > 0 ? '#F8635A' : '#f8625a8c' }} onClick={removeAllPokemons} className="buttonTrash "> <i className="fa fa-trash fa-2x"></i></buttonn>
+        </div>
+      </div>
 
       <div className="row scrollSet">
         <div className="col">
-        
+
           <div className="row justify-content-md-center">
             <div className={`pokemonContent col-11 border m-2 ${dragHoverPokemonBG}`}>
               <div className="row text-white">
@@ -176,7 +176,7 @@ const TeamSelection = () => {
                     {...pokemon}
                     key={`${pokemon.name}-${idx}`}
                     index={idx}
-          
+
                     pokemonType="pokemon"
                     onDropPokemon={movePokemon}
                   />
@@ -188,20 +188,20 @@ const TeamSelection = () => {
       </div>
 
 
-   
-        
-     
-     { loading && <div className=" row justify-content-md-center">
-              <div className="col-md-12">
-              
-             
-              <div class="spinner-border text-danger buttonReloadList" style={{width: '10rem', height: '10rem', color: 'red'}} role="status">
-  <span class="sr-only">Loading...</span>     
-</div>   
-              </div>
-          
-            </div> }
-      
+
+
+
+      {loading && <div className=" row justify-content-md-center">
+        <div className="col-md-12">
+
+
+          <div class="spinner-border text-danger buttonReloadList" style={{ width: '10rem', height: '10rem', color: 'red' }} role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+
+      </div>}
+
     </>
   );
 };
