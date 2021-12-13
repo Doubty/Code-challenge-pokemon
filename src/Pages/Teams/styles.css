@@ -1,0 +1,27 @@
+.scrollSet {
+  overflow-y: auto;
+}
+
+.h-90 {
+  height: 50rem !important;
+}
+
+.lineTeam {
+  margin-left: 0rem !important;
+  margin-top: 3rem;
+  background-color: #333652;
+  width: 90%;
+  height: 0.1rem;
+}
+
+.styleContent {
+  margin-left: 15rem !important;
+}
+
+.titleTeamShow {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 25px;
+  line-height: 48px;
+  color: #333652;
+}

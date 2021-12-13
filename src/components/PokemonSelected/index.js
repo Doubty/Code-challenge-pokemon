@@ -1,11 +1,10 @@
 
 import { useEffect, useState } from "react";
 import { useDrag } from "react-dnd";
-import pokebolaEmpty from '../../resources/images/pokebolaEmpty.svg'
 import { ReactComponent as Logo } from '../../resources/images/pokebolaEmpty.svg';
 import axios from 'axios'
 
-const PokemonSelected = ({
+const PokemonShowTeam = ({
   name,
   url,
   index,
@@ -105,13 +104,10 @@ const PokemonSelected = ({
         style={{ border: isDragging ? "5px solid #EC5D35" : "0px", position: 'relative', left: '0.1rem', top: '-12.5rem' }}
       />
 
-
-
-
     </div>
 
   );
 };
 
 
-export default PokemonSelected;
+export default PokemonShowTeam;

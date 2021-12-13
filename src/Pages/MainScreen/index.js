@@ -8,13 +8,13 @@ import Swal from 'sweetalert2'
 import axios from 'axios';
 import './styles.css';
 
-const TeamSelection = () => {
+const MainScreen = () => {
 
   const [pokemon, setPokemons] = useState([]);
   const [team, setTeam] = useState([]);
   const [loading, setLoading] = useState(false);
   const [next, setNext] = useState(null);
-
+  const [createList, setCreateList] = useState([]);
 
   async function loadPokeminList() {
     const res = await getPokemonList()
@@ -74,6 +74,19 @@ const TeamSelection = () => {
 
   useEffect(() => {
     loadPokeminList()
+
+
+    try {
+
+      loadPokeminList();
+
+
+    } catch (error) {
+
+
+
+
+    }
   }, []);
 
   const [{ isOver }, addToTeamRef] = useDrop({
@@ -89,6 +102,62 @@ const TeamSelection = () => {
       isOver: !!monitor.isOver(),
     }),
   });
+
+
+  function registerpokemonTeam() {
+
+    try {
+
+      if (team.length < 6) {
+
+        Swal.fire({
+          icon: 'error',
+          title: 'Team Pokemon',
+          text: 'Your team pokemon need have 6 pokemons!',
+          confirmButtonText: 'Confirm',
+        })
+
+      } else {
+
+        Swal.fire({
+          icon: 'success',
+          title: 'Team Pokemon',
+          text: 'New pokemon team was created with success!',
+          confirmButtonText: 'Confirm',
+        })
+
+        setCreateList(() => [...createList, [...team]]);
+
+        let valor;
+        if (createList.length === 0) {
+
+          valor = {
+            dataPokemon: [...createList, [...team]]
+          }
+
+        } else {
+
+          valor = {
+            dataPokemon: [...createList, [...team]]
+          }
+
+        }
+
+        const data = JSON.stringify(valor);
+
+        localStorage.setItem('dataPokemon', data);
+        console.log(localStorage.getItem('dataPokemon'));
+
+      }
+
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+
+
+
 
   const movePokemon = (item) => {
     console.log(item);
@@ -152,12 +221,7 @@ const TeamSelection = () => {
         <div className="col-md-12">
 
 
-          <buttonn style={{ backgroundColor: team.length < 6 ? '#8eda58a1' : '#8FDA58' }} onClick={() => Swal.fire({
-            icon: 'success',
-            title: 'Team Pokemon',
-            text: 'New pokemon team was created with success!',
-            confirmButtonText: 'Confirm',
-          })} className=" buttonCorrect"> <i className="fa fa-check fa-2x"></i></buttonn>
+          <buttonn style={{ backgroundColor: team.length < 6 ? '#8eda58a1' : '#8FDA58' }} onClick={registerpokemonTeam} className=" buttonCorrect"> <i className="fa fa-check fa-2x"></i></buttonn>
           <buttonn style={{ backgroundColor: team.length > 0 ? '#F8635A' : '#f8625a8c' }} onClick={removeAllPokemons} className="buttonTrash "> <i className="fa fa-trash fa-2x"></i></buttonn>
         </div>
       </div>
@@ -206,4 +270,4 @@ const TeamSelection = () => {
   );
 };
 
-export default TeamSelection;
+export default MainScreen;
