@@ -1,5 +1,5 @@
 .h-100 {
-    height:  14.3rem !important;
+    height:  17.5rem !important;
 }
 
 
@@ -92,31 +92,5 @@
 
 }
 
-.buttonReload{
-   color: white;
-    background-color: #F8635A; 
-    margin-top: 0rem;
-    display: flex;
-    margin-bottom: 2rem;
-    align-items: center;
-    justify-content: center;
-    width: 90%;
-    margin: 0 5rem 0 5rem;
- 
- }
-
-
- .buttonReload:hover{
-    color: white;
-     background-color: #f8625a86; 
-     margin-top: 0rem;
-     display: flex;
-     margin-bottom: 2rem;
-     align-items: center;
-     justify-content: center;
-     width: 90%;
-     margin: 0 5rem 0 5rem;
-  
-  }
  
 

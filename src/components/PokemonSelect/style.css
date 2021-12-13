@@ -1,0 +1,12 @@
+.CircleId{
+
+    border-radius: 100%;
+     color: white;
+       background-color: #90ADC6;
+        width: 2.5rem;
+         height: 2.5rem; 
+     position: relative;
+     left: 10rem;
+     top: 10rem;
+
+}

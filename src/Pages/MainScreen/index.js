@@ -190,7 +190,7 @@ const TeamSelection = () => {
 
    
         
-      <buttonn onClick={reloadListPokemon} className=" buttonReload"> {loading ? <i>Loading...</i>:<i className="fa fa-ellipsis-h fa-2x"></i>} </buttonn>
+     
      { loading && <div className=" row justify-content-md-center">
               <div className="col-md-12">
               
