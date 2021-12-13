@@ -45,7 +45,7 @@ const PokemonShowTeam = ({
 
     getDataPokemon();
 
-
+/* eslint-disable */
   }, [])
 
   async function getDataPokemon() {

@@ -46,7 +46,9 @@ const PokemonSelect = ({
 
     getDataPokemon();
 
-  }, [])
+  }, [getDataPokemon])
+
+/* eslint-disable */
 
   async function getDataPokemon() {
 
