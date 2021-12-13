@@ -221,8 +221,8 @@ const MainScreen = () => {
         <div className="col-md-12">
 
 
-          <buttonn style={{ backgroundColor: team.length < 6 ? '#8eda58a1' : '#8FDA58' }} onClick={registerpokemonTeam} className=" buttonCorrect"> <i className="fa fa-check fa-2x"></i></buttonn>
-          <buttonn style={{ backgroundColor: team.length > 0 ? '#F8635A' : '#f8625a8c' }} onClick={removeAllPokemons} className="buttonTrash "> <i className="fa fa-trash fa-2x"></i></buttonn>
+          <button style={{ backgroundColor: team.length < 6 ? '#8eda58a1' : '#8FDA58' }} onClick={registerpokemonTeam} className=" buttonCorrect"> <i className="fa fa-check fa-2x"></i></button>
+          <button style={{ backgroundColor: team.length > 0 ? '#F8635A' : '#f8625a8c' }} onClick={removeAllPokemons} className="buttonTrash "> <i className="fa fa-trash fa-2x"></i></button>
         </div>
       </div>
 

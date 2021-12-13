@@ -40,14 +40,11 @@ const PokemonSelect = ({
   // URL to get information about the pokemon
   const imgUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonIndex}.png?raw=true`;
   const pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonIndex}/`;
-  const pokemonSpeciesUrl = `https://pokeapi.co/api/v2/pokemon-species/${pokemonIndex}/`;
 
 
   useEffect(() => {
 
-
     getDataPokemon();
-
 
   }, [])
 
