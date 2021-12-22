@@ -36,7 +36,7 @@ const PokemonSelect = ({ name, url, index, pokemonType, onDropPokemon }) => {
   useEffect(() => {
     getDataPokemon();
     /* eslint-disable */
-  }, [id]);
+  }, [pokemonUrl]);
 
   async function getDataPokemon() {
     try {
