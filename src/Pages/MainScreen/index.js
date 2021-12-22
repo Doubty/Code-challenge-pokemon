@@ -235,11 +235,11 @@ const MainScreen = () => {
         <div className=" row justify-content-md-center">
           <div className="col-md-12">
             <div
-              class="spinner-border text-danger buttonReloadList"
+              className="spinner-border text-danger buttonReloadList"
               style={{ width: "10rem", height: "10rem", color: "red" }}
               role="status"
             >
-              <span class="sr-only">Loading...</span>
+              <span className="sr-only">Loading...</span>
             </div>
           </div>
         </div>
